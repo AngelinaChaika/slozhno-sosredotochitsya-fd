@@ -1,5 +1,346 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--main-font-family, "IBM Plex mono", sans-serif);
+  font-weight: normal;
+  font-size: 18px;
+  color: var(--main-text-color);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: 20px 10px;
+}
+
+.header__decorative-element {
+  position: absolute;
+  right: 37px;
+  top: 11px;
+  color: var(--text-accent-color);
+}
+
+.header__decorative-element::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 7px;
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--bg-accent-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--bg-accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  padding: 1.5px 13px;
+  text-transform: lowercase;
+  color: var(--text-accent-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgb(var(--text-accent-color-rgb) / 0.4);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--text-accent-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--text-accent-color);
+  pointer-events: none;
+}
+
+.title {
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--heading-color);
+  text-shadow: 4px 4px var(--bg-accent-color);
+}
+
+.title-decor {
+  background-color: var(--bg-accent-color);
+}
+
+.header__text {
+  color: var(--bg-color);
+  font-weight: bold;
+}
+
+.content {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+  background-color: var(--bg-color);
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__list {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  color: var(--text-accent-color);
+}
+
+.card {
+  display: grid;
+  gap: 10px;
+  line-height: 23.4px;
+}
+
+.how-to .card {
+  gap: 20px;
+}
+
+.card__title {
+  color: var(--bg-color);
+}
+
+.section__list-item {
+  display: grid;
+  gap: 10px;
+  line-height: 23.4px;
+}
+
+.list-item__title {
+  font-weight: normal;
+  color: var(--bg-color);
+}
+
+.links {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--bg-accent-color);
+}
+
+/* для :hover задала подчеркивание через bg img,
+потому что если задавать через text-decoration,
+то у подчеркивания тоже есть наследуемая shadow */
+
+.links:hover {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  transition: background-size 0.2s ease;
+}
+
+.links:focus {
+  outline: 1px solid var(--main-text-color);
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.image {
+  inline-size: 100%;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  block-size: 100vh;
+  min-block-size: 668px;
+  background-color: var(--bg-color);
+}
+
+.footer__title {
+  justify-self: center;
+  align-self: center;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  block-size: 25px;
+  inline-size: 25px;
+  border-top: 1px solid var(--text-accent-color);
+  border-right: 1px solid var(--text-accent-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  block-size: 25px;
+  inline-size: 25px;
+  border-bottom: 1px solid var(--text-accent-color);
+  border-left: 1px solid var(--text-accent-color);
+}
+
+@media (width >= 768px) {
+  .header {
+    min-block-size: 768px;
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header__decorative-element {
+    right: 48px;
+    top: 20px;
+  }
+
+  .header__theme-menu {
+    grid-column: 1/3;
+    margin-block-start: 110px;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__title {
+    grid-column: 1/3;
+    margin-inline-start: -20px;
+  }
+
+  .header__subtitle {
+    grid-column: 2;
+    justify-self: end;
+    margin-block-end: 110px;
+  }
+
+  .content {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reasons .card {
+    grid-column: 2/4;
+    margin-inline-start: 5px;
+  }
+
+  .what .card {
+    grid-column: 1/4;
+  }
+
+  .how-to .card {
+    grid-column: 2/4;
+    margin-inline-start: 5px;
+  }
+
+  .pictures {
+    gap: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+  }
+
+  .image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .image:nth-child(1) {
+    grid-column: 1/3;
+  }
+
+  .image:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1/3;
+  }
+
+  .image:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2/4;
+  }
+
+  .image:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .image:nth-child(5) {
+    grid-column: 2/4;
+    grid-row: 3;
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
+
+  .decorated-zone::after {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::before {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block-start: 0;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header__subtitle {
+    margin-block-end: 55px;
+  }
+
+  .reasons .card {
+    margin-inline-start: 0;
+  }
+
+  .what .section__title {
+    grid-column: 1/4;
+    inline-size: calc(100% / 3);
+  }
+
+  .what .card {
+    align-self: start;
+    grid-column: auto;
+  }
+
+  .how-to .card {
+    grid-column: 2/4;
+    margin-inline-start: 0;
+  }
 }
