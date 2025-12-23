@@ -2,8 +2,14 @@
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --main-text-color: #f1b2ce;
+  --text-on-bg: #000028;
   --heading-color: #db00ff;
   --bg-accent-color: #ff0070;
   --text-accent-color: #ff0070;
   --text-accent-color-rgb: 255 0 112;
+  --rec-display: absolute;
+}
+
+.theme-dark .header__decorative-element {
+  display: var(--rec-display);
 }

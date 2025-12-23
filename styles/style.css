@@ -3,10 +3,11 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: var(--main-font-family, "IBM Plex mono", sans-serif);
+  font-family: var(--main-font-family, "IBM Plex mono", monospace);
   font-weight: normal;
   font-size: 18px;
   color: var(--main-text-color);
+  background-color: var(--bg-color);
 }
 
 .header {
@@ -81,7 +82,7 @@
 }
 
 .header__text {
-  color: var(--bg-color);
+  color: var(--text-on-bg);
   font-weight: bold;
 }
 
@@ -89,7 +90,6 @@
   display: grid;
   gap: 50px;
   padding: 40px 10px;
-  background-color: var(--bg-color);
 }
 
 .section {
@@ -112,23 +112,16 @@
   line-height: 23.4px;
 }
 
-.how-to .card {
+.how-to > .card {
   gap: 20px;
 }
 
 .card__title {
-  color: var(--bg-color);
-}
-
-.section__list-item {
-  display: grid;
-  gap: 10px;
-  line-height: 23.4px;
+  color: var(--text-on-bg);
 }
 
 .list-item__title {
   font-weight: normal;
-  color: var(--bg-color);
 }
 
 .links {
@@ -166,7 +159,6 @@
   display: grid;
   block-size: 100vh;
   min-block-size: 668px;
-  background-color: var(--bg-color);
 }
 
 .footer__title {
@@ -246,7 +238,7 @@
     grid-column: 1/4;
   }
 
-  .how-to .card {
+  .how-to > .card {
     grid-column: 2/4;
     margin-inline-start: 5px;
   }
@@ -339,7 +331,7 @@
     grid-column: auto;
   }
 
-  .how-to .card {
+  .how-to > .card {
     grid-column: 2/4;
     margin-inline-start: 0;
   }

@@ -2,20 +2,16 @@
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
   --main-text-color: #353430;
+  --text-on-bg: #353430;
   --heading-color: #ffc2e6;
   --bg-accent-color: #ff8dcb;
   --text-accent-color: #353430;
   --text-accent-color-rgb: 53 52 48;
+  --rec-display: none;
+}
 
-  .header__decorative-element {
-    display: none;
-  }
-
-  .header__text,
-  .card__title,
-  .list-item__title {
-    color: var(--text-accent-color);
-  }
+.header__decorative-element {
+  display: var(--rec-display);
 }
 
 @media (prefers-color-scheme: light) {
@@ -23,19 +19,15 @@
     --bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
     --main-text-color: #353430;
+    --text-on-bg: #353430;
     --heading-color: #ffc2e6;
     --bg-accent-color: #ff8dcb;
     --text-accent-color: #353430;
     --text-accent-color-rgb: 53 52 48;
-  }
+    --rec-display: none;
 
-  .header__decorative-element {
-    display: none;
-  }
-
-  .header__text,
-  .card__title,
-  .list-item__title {
-    color: var(--text-accent-color);
+    .header__decorative-element {
+      display: var(--rec-display);
+    }
   }
 }
