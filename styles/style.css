@@ -53,6 +53,8 @@
   padding: 1.5px 13px;
   text-transform: lowercase;
   color: var(--text-accent-color);
+  outline: 0 solid transparent;
+  transition: outline 0.3s ease;
 }
 
 .header__theme-menu-button:hover {
@@ -127,6 +129,8 @@
 .links {
   text-decoration: none;
   text-shadow: 2px 2px var(--bg-accent-color);
+  transition: background-size 0.3s ease;
+  background-size: 0 1px;
 }
 
 /* для :hover задала подчеркивание через bg img,
@@ -138,7 +142,6 @@
   background-repeat: no-repeat;
   background-size: 100% 1px;
   background-position: 0 100%;
-  transition: background-size 0.2s ease;
 }
 
 .links:focus {
