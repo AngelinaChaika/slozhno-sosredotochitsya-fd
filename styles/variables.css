@@ -8,5 +8,5 @@
   --bg-accent-color: #ff0070;
   --text-accent-color: #ff0070;
   --text-accent-color-rgb: 255 0 112;
-  --rec-display: absolute;
+  --rec-display: block;
 }
